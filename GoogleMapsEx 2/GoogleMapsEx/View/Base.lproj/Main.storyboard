@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Google Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GoogleMapViewController" customModule="GoogleMapsEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cf-yL-PXH" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLO-Ld-mpF">
+                                <rect key="frame" x="0.0" y="54" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.37254901959999998" blue="0.49492385789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Z9-rd-k8L"/>
+                                </constraints>
+                                <state key="normal" title="Search place.....">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DjK-AN-SHD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Cf-yL-PXH" firstAttribute="top" secondItem="qLO-Ld-mpF" secondAttribute="bottom" id="6Ow-o6-z1t"/>
+                            <constraint firstItem="3Cf-yL-PXH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7pN-uG-Zrv"/>
+                            <constraint firstItem="3Cf-yL-PXH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bh1-2s-cU5"/>
+                            <constraint firstItem="3Cf-yL-PXH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SPQ-tA-ZS0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qLO-Ld-mpF" secondAttribute="trailing" id="imy-iX-gDa"/>
+                            <constraint firstItem="qLO-Ld-mpF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qpx-k0-85o"/>
+                            <constraint firstItem="qLO-Ld-mpF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wLo-bz-f5I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EiK-5O-VH7"/>
+                    <connections>
+                        <outlet property="mapView" destination="3Cf-yL-PXH" id="F0o-7L-NYj"/>
+                        <outlet property="searchButton" destination="qLO-Ld-mpF" id="RCl-HO-mVN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.8695652173915" y="69.642857142857139"/>
+        </scene>
+        <!--Autocomplete Search View Controller-->
+        <scene sceneID="jKv-ao-YUi">
+            <objects>
+                <viewController storyboardIdentifier="autocompleteSearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5bp-Hv-NNl" customClass="autocompleteSearchViewController" customModule="GoogleMapsEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5iX-DQ-yQC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eZi-3O-M7H">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="0.0" id="cGd-VY-pT3">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="1.1920928955078125e-07"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cGd-VY-pT3" id="oIn-Ih-Z3L">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfN-Uw-bxe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOu-tY-FiD">
+                                        <rect key="frame" x="15" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="J9Y-we-ZYz"/>
+                                            <constraint firstAttribute="height" constant="40" id="xDO-RU-nYW"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backbtn:" destination="5bp-Hv-NNl" eventType="touchUpInside" id="V3s-Pg-SgC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sOu-tY-FiD" secondAttribute="bottom" id="LIW-hy-wdy"/>
+                                    <constraint firstItem="sOu-tY-FiD" firstAttribute="leading" secondItem="QfN-Uw-bxe" secondAttribute="leading" constant="15" id="MkZ-Qe-ZRa"/>
+                                    <constraint firstAttribute="height" constant="40" id="Uxl-cF-3Ox"/>
+                                    <constraint firstItem="sOu-tY-FiD" firstAttribute="top" secondItem="QfN-Uw-bxe" secondAttribute="top" id="qtj-WP-lHt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ddi-jQ-Hc7"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="eZi-3O-M7H" firstAttribute="top" secondItem="QfN-Uw-bxe" secondAttribute="bottom" id="4Lu-Wq-YLL"/>
+                            <constraint firstItem="QfN-Uw-bxe" firstAttribute="leading" secondItem="Ddi-jQ-Hc7" secondAttribute="leading" id="6fQ-ae-QoP"/>
+                            <constraint firstItem="Ddi-jQ-Hc7" firstAttribute="trailing" secondItem="QfN-Uw-bxe" secondAttribute="trailing" id="86y-98-a1N"/>
+                            <constraint firstItem="Ddi-jQ-Hc7" firstAttribute="trailing" secondItem="eZi-3O-M7H" secondAttribute="trailing" id="8gx-e3-9ep"/>
+                            <constraint firstItem="QfN-Uw-bxe" firstAttribute="top" secondItem="Ddi-jQ-Hc7" secondAttribute="top" id="IIf-dT-tPn"/>
+                            <constraint firstItem="eZi-3O-M7H" firstAttribute="leading" secondItem="Ddi-jQ-Hc7" secondAttribute="leading" id="Skb-0G-2eQ"/>
+                            <constraint firstItem="Ddi-jQ-Hc7" firstAttribute="bottom" secondItem="eZi-3O-M7H" secondAttribute="bottom" id="wvg-fd-OLZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fX0-s4-dwa"/>
+                    <connections>
+                        <outlet property="tableView" destination="eZi-3O-M7H" id="SnK-qG-qA3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5d-Gs-Bpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2973.913043478261" y="68.973214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="256" height="256"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
