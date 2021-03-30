@@ -58,6 +58,8 @@ class autocompleteSearchViewController: UIViewController, UISearchBarDelegate, U
     func tableViewSetup(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        let detailsTxt = UINib(nibName: "DataCell", bundle: nil)
+        self.tableView.register(detailsTxt, forCellReuseIdentifier: "cell")
         self.tableView.tableHeaderView = searchController.searchBar
         self.tableView.backgroundColor = UIColor.white
     }
@@ -130,18 +132,20 @@ class autocompleteSearchViewController: UIViewController, UISearchBarDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DataCell
         
         
         
         if searchController.isActive == true{
-            cell.textLabel?.text = searchResults[indexPath.row]
-            cell.textLabel?.lineBreakMode = .byWordWrapping
-            cell.textLabel?.numberOfLines = 0
+            //cell.textLabel?.text = searchResults[indexPath.row]
+            cell.detailsText.text = searchResults[indexPath.row]
+           // cell.textLabel?.lineBreakMode = .byWordWrapping
+            //cell.textLabel?.numberOfLines = 0
         }else{
-            cell.textLabel?.text = Locations[indexPath.row]
-            cell.textLabel?.lineBreakMode = .byWordWrapping
-            cell.textLabel?.numberOfLines = 0
+            cell.detailsText.text = Locations[indexPath.row]
+            //cell.textLabel?.text = Locations[indexPath.row]
+            //cell.textLabel?.lineBreakMode = .byWordWrapping
+            //cell.textLabel?.numberOfLines = 0
         }
         
         

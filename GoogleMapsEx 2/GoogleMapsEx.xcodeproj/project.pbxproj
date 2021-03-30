@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1059CC8B2613409500F4DC41 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059CC892613409500F4DC41 /* DataCell.swift */; };
+		1059CC8C2613409500F4DC41 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1059CC8A2613409500F4DC41 /* DataCell.xib */; };
 		1E60332E260DBF5100B4D30F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E60332D260DBF5100B4D30F /* AppDelegate.swift */; };
 		1E603330260DBF5100B4D30F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E60332F260DBF5100B4D30F /* SceneDelegate.swift */; };
 		1E603335260DBF5100B4D30F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E603333260DBF5100B4D30F /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1059CC892613409500F4DC41 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
+		1059CC8A2613409500F4DC41 /* DataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
 		1E60332A260DBF5100B4D30F /* GoogleMapsEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E60332D260DBF5100B4D30F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E60332F260DBF5100B4D30F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		1E603321260DBF5000B4D30F = {
 			isa = PBXGroup;
 			children = (
+				1059CC892613409500F4DC41 /* DataCell.swift */,
+				1059CC8A2613409500F4DC41 /* DataCell.xib */,
 				1E60332C260DBF5100B4D30F /* GoogleMapsEx */,
 				1E60332B260DBF5100B4D30F /* Products */,
 				5B015D5F421F273B18C7826F /* Pods */,
@@ -214,6 +220,7 @@
 				1E60333D260DBF5500B4D30F /* LaunchScreen.storyboard in Resources */,
 				1E60333A260DBF5500B4D30F /* Assets.xcassets in Resources */,
 				1E603335260DBF5100B4D30F /* Main.storyboard in Resources */,
+				1059CC8C2613409500F4DC41 /* DataCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 				1E603351260DC5ED00B4D30F /* autocompleteSearchViewController.swift in Sources */,
 				1E60335D260E07D400B4D30F /* SQliteHelper.swift in Sources */,
 				1E603360260E080500B4D30F /* LocStore.swift in Sources */,
+				1059CC8B2613409500F4DC41 /* DataCell.swift in Sources */,
 				1E60332E260DBF5100B4D30F /* AppDelegate.swift in Sources */,
 				1E60334E260DC55D00B4D30F /* GoogleMapViewController.swift in Sources */,
 				1E603330260DBF5100B4D30F /* SceneDelegate.swift in Sources */,
